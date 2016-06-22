@@ -1,0 +1,115 @@
+/*buzzfeed red #ee3322*/
+/*buzzfeed blue #0077ee*/
+/*buzzfeed yellow #ffee00*/
+
+/*font color: #333232
+light grey boxes: #e2e2e2
+dark grey boxes: #6b6a6a
+white: #ffffff*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	color: black;
+	font-family: "ProximaNova", sans-serif !important;
+	background-color: #ffffff;
+	font-size: 1em;
+	font-weight: bold;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+	margin: 1em 0 .3em 0;
+	color: #ee3322;
+	font-size: 2.5em;
+}
+
+table {
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+
+#input_viewgoal {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #ee3322;
+	text-align: center;
+	width: 100px;
+	padding: 5px;
+	background-color: #e2e2e2;
+}
+
+#calc_button {
+	font-weight: bold;
+	border: none;
+	background-color: white;
+	font-size: 1em;
+}
+
+#country_select {
+	background-color: #e2e2e2;
+	width: 51.3em;
+	padding: 0.4em;
+	margin: 1em auto;
+}
+
+.graybutton {
+	border: none;
+	font-weight: bold;
+	background-color: #6b6a6a;
+	padding: 0.4em;
+	width: 10em;
+	color: #ffffff;
+	font-size: 1em;
+}
+
+select {
+	-webkit-appearance: none;
+	border-radius: 0;
+	text-align: center;
+	margin-left: 0.5em;
+}
+
+#reset_button {
+	margin-left: 29em;
+}
+
+#maingrid {
+	background-color: #e2e2e2;
+	padding: 0.8em;
+	width: 49.6em;
+	margin: 0 auto;
+}
+
+#prelaunch {
+	text-align: center; 
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: #6b6a6a;
+	color: #ffffff;
+	padding: 0.4em;
+	width: 49.6em;
+}
+
+.cells td{
+	border: 1px solid black;
+	padding: 0.2em;
+	background-color: #ffffff;
+}
+
+.na{
+	background-color: #e2e2e2 !important;
+}
+
+
+button.copybutton {
+	color: #ee3322;
+	font-weight: bold;
+	border: none;
+	background-color: white;
+	font-size: 0.9em;
+}
