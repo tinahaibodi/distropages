@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="script.js"></script>
+	<script src="clipboard.js-master/dist/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -18,21 +19,26 @@
 				<form onsubmit="return false;">
 					<label>View Goal:</label>
 					<input type="text" id="input_viewgoal" />
-					<input type="button" id="calc_button" onClick="javacript:CPVcalc()" value="Calc" />
+					<input type="button" id="calc_button" onClick="javacript:CPVcalc()" value="Calc"/>
 
 				</td>
 			</tr>
 		</table>
+
 		<table id="country_select">
 			<tr>
 				<td>
-					<select class="graybutton" name="Choose a Country">
+					<select id= "select_geo" class="graybutton" name="Choose a Country">
 						<option value="us" selected>United States</option>
+						<option value="uk">United Kingdom</option>
 						<option value="ca">Canada</option>
 						<option value="br">Brazil</option>
 						<option value="mx">Mexico</option>
+						<option value="au">Australia</option>
+						<option value="fr">France</option>
+						<option value="ge">Germany</option>
 					</select>
-					<button id ="reset_button" class="graybutton" type="reset" value="Reset" onClick="javacript:CPVcalc()">Reset</button>
+					<button type="button" id ="reset_button" class="graybutton" onClick="window.location.reload();">Reset</button>
 				</form>
 			</td>
 		</tr>
@@ -45,7 +51,7 @@
 		</table>
 		<table>
 			<tr class="cells">
-				<td style="text-align: center;">Ad Unit</td>
+				<td style="text-align: center; width:260px">Ad Unit</td>
 				<td style="text-align: center; width:100px">Breakout<br>(%)</td> 
 				<td style="text-align: center; width:100px">Total Views</td>
 				<td style="text-align: center; width:100px">Average CTR<br>(%) </td>
@@ -58,7 +64,7 @@
 				<td><div id="display_totalviews_app"></td>
 				<td><div id="display_avgctr_app"></td>
 				<td style="color:#ee3322"><div id="display_impsneeded_app"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_impsneeded_app">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td>Social Content Seeding</td>
@@ -66,7 +72,7 @@
 				<td style="color:#ee3322"><div id="display_totalviews_scs"></td>
 				<td class="na"></td>
 				<td class="na"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_totalviews_scs">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td>Thumbnail Units</td>
@@ -74,7 +80,7 @@
 				<td><div id="display_totalviews_thumb"></td>
 				<td><div id="display_avgctr_thumb"></td>
 				<td style="color:#ee3322"><div id="display_impsneeded_thumb"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_impsneeded_thumb">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td>ATSU 1</td>
@@ -82,7 +88,7 @@
 				<td class="na"></td>
 				<td><div id="display_avgctr_atsu1"></td>
 				<td style="color:#ee3322"><div id="display_impsneeded_atsu1"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_impsneeded_atsu1">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td>ATSU 2</td>
@@ -90,7 +96,7 @@
 				<td class="na"></td>
 				<td><div id="display_avgctr_atsu2"></td>
 				<td style="color:#ee3322"><div id="display_impsneeded_atsu2"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_impsneeded_atsu2">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td>ATSU 3</td>
@@ -98,7 +104,7 @@
 				<td class="na"></td>
 				<td><div id="display_avgctr_atsu3"></td>
 				<td style="color:#ee3322"><div id="display_impsneeded_atsu3"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_impsneeded_atsu3">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td>SWSU (Desktop & Mobile Web)</td>
@@ -106,7 +112,7 @@
 				<td><div id="display_totalviews_swsu"></td>
 				<td><div id="display_avgctr_swsu"></td>
 				<td style="color:#ee3322"><div id="display_impsneeded_swsu"></td>
-				<td><button class="copybutton">Copy</button></td>
+				<td><button class="copybutton" data-clipboard-target="#display_impsneeded_swsu">Copy</button></td>
 			</tr>
 			<tr class="cells">
 				<td style="font-weight: bold">Total Views</td>
@@ -118,10 +124,19 @@
 			</tr>
 		</table> 
 	</div> <!-- maingrid -->
+
+    <script>
+    var clipboard = new Clipboard('.copybutton');
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
+
 </body>
 </html>
 
-
-<!-- make responsive -->
-<!-- fix reset button behavior -- >
-<!-- make dropdown effective -->
+<!-- make enter work for calc button -->
+<!-- prompt flight length for france and germany -->
