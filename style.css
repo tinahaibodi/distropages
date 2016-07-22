@@ -46,8 +46,11 @@ table {
 #calc_button {
 	font-weight: bold;
 	border: none;
-	background-color: white;
+	background-color: #ffffff;
 	font-size: 1em;
+	border: 1px solid #ee3322;
+	padding: 0.2em;
+	border-radius: 0.2em;
 }
 
 #country_select {
