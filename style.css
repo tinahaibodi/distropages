@@ -113,3 +113,9 @@ button.copybutton {
 	background-color: white;
 	font-size: 0.9em;
 }
+
+.copybutton:active {
+	background: #ee3322;
+	border-radius: 0.2em;
+	padding: 0.023em;
+}
