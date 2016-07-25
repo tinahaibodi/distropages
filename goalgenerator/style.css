@@ -53,6 +53,7 @@ table {
 	border-radius: 0.2em;
 	box-shadow: 0 2px #ee3322;
 	margin-left: 2px;
+	outline: none;
 }
 
 
@@ -133,6 +134,7 @@ button.copybutton {
 	border: none;
 	background-color: white;
 	font-size: 0.9em;
+	outline: none;
 }
 
 .copybutton:active {
