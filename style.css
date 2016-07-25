@@ -29,6 +29,10 @@ a {
 	color: #0077ee;
 }
 
+img {
+	margin: 330px 212px 0;
+}
+
 #toolbox {
 	margin: 0 auto;
 	width: 600px;
