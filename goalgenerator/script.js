@@ -1,6 +1,9 @@
+var calculations = 0;
+
 var CPVcalc = function() {
 	viewgoal = document.getElementById("input_viewgoal").value;
 	// alert(viewgoal);
+	calculations++;
 
 	//UNITED STATES
 	if (select_geo.value == "us"){
