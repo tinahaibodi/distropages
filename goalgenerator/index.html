@@ -12,6 +12,8 @@
 
 <body>
 
+	<p id="warning"><u><b>NOTE FOR CSMS</b></u>: This <i>is not </i> to be used to provide clients with impression estimates, in any circumstances. <br><span class="highlight">Please see <a href="https://docs.google.com/document/d/1SNO2fKprxsZ9EuETE9ibZ3bDRC69hS3ZnR9eiDisKwI/edit#bookmark=kix.irzjr472yfmi">this portion</a> of the Distro FAQs for guidance.</span></p>
+
 	<h1>CPV GOAL GENERATOR</h1>
 
 	<table>
@@ -19,7 +21,9 @@
 			<td>
 				<form onsubmit="return false;">
 					<label>View Goal:</label>
-					<input type="text" id="input_viewgoal" />
+					<input type="text" id="input_viewgoal"/>
+					<label>Flight Length:</label>
+					<input type="text" id="input_flight"/>
 					<input type="button" id="calc_button" onClick="javacript:CPVcalc()" value="Calc"/>
 
 				</td>
