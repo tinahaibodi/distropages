@@ -2,9 +2,14 @@
 /*buzzfeed blue #0077ee*/
 /*buzzfeed yellow #ffee00*/
 
+/*font color: #333232
+light grey boxes: #e2e2e2
+dark grey boxes: #6b6a6a
+white: #ffffff*/
+
 * {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 body {
@@ -16,6 +21,20 @@ body {
 	margin: auto;
 }
 
+#warning {
+	width: 800px;
+	font-weight: normal;
+	margin-top: 10px;
+	/*	margin-left: 100px;*/
+	margin-left: auto;
+	margin-right: auto;
+	/*    padding-left: 100px;*/
+}
+
+span.highlight {
+	background-color: yellow;
+}
+
 h1 {
 	text-align: center;
 	margin: 1em 0 .3em 0;
@@ -23,31 +42,117 @@ h1 {
 	font-size: 2.5em;
 }
 
-a {
-	text-decoration: none;
-	font-size: 24px;
-	color: #0077ee;
-}
-
-img {
-	margin: 330px 212px 0;
-}
-
-#toolbox {
+table {
 	margin: 0 auto;
-	width: 600px;
-	height: 600px;
-	/*border: 5px solid #ee3322;*/
-	padding: 0;
-	border-radius: 1em;
-	background: url("toolbox.png") no-repeat;
-	background-size: cover;
-	margin-top: -52px;
+	background-color: #ffffff;
 }
 
-.badge {
-	width: 177px;
-    position: absolute;
-    top: 57px;
-    left: 425px;
+#input_viewgoal, #input_flight {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #ee3322;
+	text-align: center;
+	width: 100px;
+	padding: 5px;
+	background-color: #e2e2e2;
+}
+
+#calc_button {
+	font-weight: bold;
+	border: none;
+	background-color: #ffffff;
+	font-size: 1em;
+	border: 1px solid #ee3322;
+	padding: 0.2em;
+	border-radius: 0.2em;
+	box-shadow: 0 2px #ee3322;
+	margin-left: 2px;
+	outline: none;
+}
+
+
+#calc_button:hover {
+	background-color: #ffcec9;
+}
+
+#calc_button:active {
+	font-weight: bold;
+	border: none;
+	background-color: #ffcec9;
+	font-size: 1em;
+	border: 1px solid #ee3322;
+	padding: 0.2em;
+	border-radius: 0.2em;
+	box-shadow: 0 1px #ee3322;
+}
+
+#country_select {
+	background-color: #e2e2e2;
+	width: 51.3em;
+	padding: 0.4em;
+	margin: 1em auto;
+}
+
+.graybutton {
+	border: none;
+	font-weight: bold;
+	background-color: #6b6a6a;
+	padding: 0.4em;
+	width: 10em;
+	color: #ffffff;
+	font-size: 1em;
+}
+
+select {
+	-webkit-appearance: none;
+	border-radius: 0;
+	text-align: center;
+	margin-left: 0.5em;
+}
+
+#reset_button {
+	margin-left: 29em;
+}
+
+#maingrid {
+	background-color: #e2e2e2;
+	padding: 0.8em;
+	width: 49.6em;
+	margin: 0 auto;
+}
+
+#prelaunch {
+	text-align: center; 
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: #6b6a6a;
+	color: #ffffff;
+	padding: 0.4em;
+	width: 49.6em;
+}
+
+.cells td{
+	border: 1px solid black;
+	padding: 0.2em;
+	background-color: #ffffff;
+}
+
+.na{
+	background-color: #e2e2e2 !important;
+}
+
+
+button.copybutton {
+	color: #ee3322;
+	font-weight: bold;
+	border: none;
+	background-color: white;
+	font-size: 0.9em;
+	outline: none;
+}
+
+.copybutton:active {
+	background: #ee3322;
+	border-radius: 0.2em;
+	padding: 0.023em;
 }
