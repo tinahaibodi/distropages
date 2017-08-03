@@ -1,9 +1,11 @@
 var calculations = 0;
 
 var CPVcalc = function() {
-	viewgoal = document.getElementById("input_viewgoal").value;
+	var viewgoal = document.getElementById("input_viewgoal").value;
+	var flight = document.getElementById("input_flight").value;
 	// alert(viewgoal);
 	calculations++;
+
 
 	//UNITED STATES
 	if (select_geo.value == "us"){
@@ -18,6 +20,11 @@ var CPVcalc = function() {
 		var avgctr_thumb = 0.15;
 		var avgctr_swsu = 0.30;
 		var avgctr_atsu = 0.14;
+
+		var avail_app = 1133333;
+		var avail_thumb = 800000;
+		var avail_swsu = 1666667;
+		var avail_atsu = 222222;
 
 	} 
 	//UNITED KINGDOM
@@ -123,6 +130,7 @@ var CPVcalc = function() {
 
 	var avgctr_swsu = avgctr_swsu.toFixed(2);
 	var avgctr_atsu = avgctr_atsu.toFixed(2);
+	
 
 	var totalviews_app = Math.round((viewgoal*breakout_app)/100);
 	var totalviews_scs = Math.round((viewgoal*breakout_scs)/100);
@@ -136,7 +144,41 @@ var CPVcalc = function() {
 	var impsneeded_swsu = Math.round((totalviews_swsu/avgctr_swsu)*100);
 	var impsneeded_atsu = Math.round((totalviews_atsu/avgctr_atsu)*100);
 	var totalimpsneeded = impsneeded_app + impsneeded_thumb + impsneeded_swsu + impsneeded_atsu;
+	
 
+
+	if (select_geo.value == "us") {
+
+
+		if (impsneeded_app/flight > avail_app){
+			var impsneeded_app = avail_app*flight;
+			var totalviews_app = Math.round((impsneeded_app*avgctr_app)/100);
+		}
+
+		if (impsneeded_thumb/flight > avail_thumb){
+			var impsneeded_thumb = avail_thumb*flight;
+			var totalviews_thumb = Math.round((impsneeded_thumb*avgctr_thumb)/100);
+		}
+
+		if (impsneeded_swsu/flight > avail_swsu){
+			var impsneeded_swsu = avail_swsu*flight;
+			var totalviews_swsu = Math.round((impsneeded_swsu*avgctr_swsu)/100);
+		}
+
+		if (impsneeded_atsu/flight > avail_atsu){
+			var impsneeded_atsu = avail_atsu*flight;
+			var totalviews_atsu = Math.round((impsneeded_atsu*avgctr_atsu)/100);
+		}
+
+		if (impsneeded_atsu/flight > avail_atsu){
+		var totalviews_scs = viewgoal - (totalviews_app + totalviews_thumb + totalviews_swsu + totalviews_atsu);
+		}
+
+		var totalviews = totalviews_app + totalviews_scs + totalviews_thumb + totalviews_swsu + totalviews_atsu;
+
+		var totalimpsneeded = impsneeded_app + impsneeded_thumb + impsneeded_swsu + impsneeded_atsu;
+
+	}
 
 	document.getElementById("display_breakout_app").innerHTML = breakout_app +'%';
 	document.getElementById("display_breakout_scs").innerHTML = breakout_scs +'%';
@@ -162,3 +204,4 @@ var CPVcalc = function() {
 	document.getElementById("display_impsneeded_atsu").innerHTML = impsneeded_atsu;
 	document.getElementById("display_totalimpsneeded").innerHTML = totalimpsneeded;
 }
+
