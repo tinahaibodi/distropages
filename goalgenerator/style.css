@@ -21,6 +21,20 @@ body {
 	margin: auto;
 }
 
+#warning {
+	width: 800px;
+	font-weight: normal;
+	margin-top: 10px;
+	/*	margin-left: 100px;*/
+	margin-left: auto;
+	margin-right: auto;
+	/*    padding-left: 100px;*/
+}
+
+span.highlight {
+	background-color: yellow;
+}
+
 h1 {
 	text-align: center;
 	margin: 1em 0 .3em 0;
@@ -33,7 +47,7 @@ table {
 	background-color: #ffffff;
 }
 
-#input_viewgoal {
+#input_viewgoal, #input_flight {
 	font-size: 1.2em;
 	font-weight: bold;
 	color: #ee3322;
